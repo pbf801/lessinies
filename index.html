@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Les Sinies</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #logo {
+            width: 250px;
+            margin-bottom: 40px;
+        }
+        #language-selection, #content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+        button {
+            margin: 15px;
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #555;
+            color: white;
+        }
+        #menu-link {
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 22px;
+            text-decoration: none;
+            color: white;
+            background: #333;
+            padding: 15px 30px;
+            border-radius: 12px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        #menu-link:hover {
+            background: black;
+            transform: scale(1.05);
+        }
+        .icon {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="logo" src="https://lessinies.tucartadigital.com/assets/restaurantes/lessinies/logo.png?v=2026-01-30.1.1.387" alt="Les Sinies Logo">
+
+    <div id="language-selection">
+        <h2>Selecciona tu idioma / Selecciona el teu idioma</h2>
+        <button onclick="setLanguage('es')">🇪🇸 Castellano</button>
+        <button onclick="setLanguage('ca')">🇨🇦 Català</button>
+    </div>
+
+    <div id="content" style="display:none;">
+        <h2 id="welcome-message"></h2>
+        <a id="menu-link" href="#" target="_blank">
+            <i class="fas fa-utensils icon"></i>
+            <span id="menu-text"></span>
+        </a>
+        <br><br>
+        <button id="review-button" onclick="openReview()">
+            <i class="fas fa-star icon"></i>
+            <span id="review-text"></span>
+        </button>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            document.getElementById('language-selection').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+
+            if (lang === 'es') {
+                document.getElementById('welcome-message').textContent = 'Bienvenido a Les Sinies';
+                document.getElementById('menu-text').textContent = 'Ver la carta';
+                document.getElementById('menu-link').href = 'https://lessinies.tucartadigital.com/admin/assets/scripts/pdf/makePDF.php?tipo=seccion&id=toda&idioma=es';
+                document.getElementById('review-text').textContent = 'Dejar una reseña';
+            } else if (lang === 'ca') {
+                document.getElementById('welcome-message').textContent = 'Benvingut a Les Sinies';
+                document.getElementById('menu-text').textContent = 'Veure la carta';
+                document.getElementById('menu-link').href = 'https://lessinies.tucartadigital.com/admin/assets/scripts/pdf/makePDF.php?tipo=seccion&id=toda&idioma=ca';
+                document.getElementById('review-text').textContent = 'Deixar una ressenya';
+            }
+        }
+
+        function openReview() {
+            window.open('https://www.google.com/maps/place/Granja+Cafeteria+Les+s%C3%ADnies/@41.4176063,2.0089322,593m/data=!3m1!1e3!4m8!3m7!1s0x12a49a99405c6b77:0x4dffe476a2ebf1de!8m2!3d41.4176023!4d2.0115071!9m1!1b1!16s%2Fg%2F11cns5g00m?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoJLDEwMjExNjQwSAFQAw%3D%3D', '_blank');
+        }
+    </script>
+
+</body>
+</html>
