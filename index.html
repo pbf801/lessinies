@@ -71,7 +71,7 @@
     <div id="language-selection">
         <h2>Selecciona tu idioma / Selecciona el teu idioma</h2>
         <button onclick="setLanguage('es')">🇪🇸 Castellano</button>
-        <button onclick="setLanguage('ca')">🇨🇦 Català</button>
+        <button onclick="setLanguage('ca')">💛 Català</button>
     </div>
 
     <div id="content" style="display:none;">
@@ -93,12 +93,12 @@
             document.getElementById('content').style.display = 'block';
 
             if (lang === 'es') {
-                document.getElementById('welcome-message').textContent = 'Bienvenido a Les Sinies';
+                document.getElementById('welcome-message').textContent = 'Bienvenid@ a Les Sinies';
                 document.getElementById('menu-text').textContent = 'Ver la carta';
                 document.getElementById('menu-link').href = 'https://lessinies.tucartadigital.com/admin/assets/scripts/pdf/makePDF.php?tipo=seccion&id=toda&idioma=es';
                 document.getElementById('review-text').textContent = 'Dejar una reseña';
             } else if (lang === 'ca') {
-                document.getElementById('welcome-message').textContent = 'Benvingut a Les Sinies';
+                document.getElementById('welcome-message').textContent = 'Benvingut/da a Les Sinies';
                 document.getElementById('menu-text').textContent = 'Veure la carta';
                 document.getElementById('menu-link').href = 'https://lessinies.tucartadigital.com/admin/assets/scripts/pdf/makePDF.php?tipo=seccion&id=toda&idioma=ca';
                 document.getElementById('review-text').textContent = 'Deixar una ressenya';
